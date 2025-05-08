@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Saviour - Breathing New Life Into Gaming Classics</title>
-    <meta name="description" content="Retro Saviour specializes in console restoration, game preservation, and building the retro gaming community.">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Retro Saviour - Reviving Your Retro Gaming Classics</title>
     <style>
         :root {
-            --primary-color: #ffde00;
-            --secondary-color: #ff9900;
-            --dark-color: #121212;
-            --light-color: #f4f4f4;
-            --danger-color: #ff6b6b;
-            --success-color: #51cf66;
+            --retro-gray: #333333;
+            --retro-blue: #0066CC;
+            --retro-charcoal: #1C2526;
+            --retro-cream: #E6E6D4;
+            --retro-purple: #78bbff;
+            --retro-green: #33CC66;
+            --pixel-font: 'Press Start 2P', sans-serif;
+            --graffiti-font: 'VT323', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -28,922 +27,683 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--dark-color);
-            color: var(--light-color);
+            font-family: Arial, sans-serif;
+            background-color: var(--retro-charcoal);
+            color: var(--retro-cream);
             line-height: 1.6;
-            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Scanline effect */
-        body::before {
-            content: "";
+        nav {
+            background: var(--retro-gray);
+            padding: 1rem;
             position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--retro-blue);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--retro-cream);
+            text-decoration: none;
+            font-family: var(--pixel-font), sans-serif;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--retro-green);
+        }
+
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--retro-cream);
+            transition: fill 0.3s;
+            vertical-align: middle;
+        }
+
+        .nav-icon:hover {
+            fill: var(--retro-green);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand span {
+            font-family: var(--pixel-font), sans-serif;
+            font-size: 1rem;
+            color: var(--retro-cream);
+            transition: color 0.3s;
+        }
+
+        .nav-brand:hover span {
+            color: var(--retro-green);
+        }
+
+        header {
+            background: url('images/Shelf-with-Retro-Consoles.jpg') no-repeat center/cover;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--retro-blue);
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.15),
-                rgba(0, 0, 0, 0.15) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.3;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
         }
 
-        h1, h2, h3 {
-            font-family: 'Press Start 2P', cursive;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
+        header h1, header p {
             position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
+            z-index: 2;
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: var(--primary-color);
+        header h1 {
+            font-family: var(--graffiti-font), monospace;
+            color: var(--retro-purple);
+            font-size: 4.5rem;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 1rem;
         }
 
-        p {
-            margin: 1rem 0;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            border: none;
-            border-radius: 5px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-large {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        header p {
+            font-family: var(--graffiti-font), monospace;
+            font-size: 2.2rem;
+            max-width: 800px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            color: var(--retro-cream);
         }
 
         section {
-            padding: 5rem 0;
-            position: relative;
-        }
-
-        section:nth-child(odd) {
-            background-color: rgba(18, 18, 18, 0.8);
-        }
-
-        section:nth-child(even) {
-            background-color: rgba(24, 24, 24, 0.8);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Pixel divider */
-        .pixel-divider {
-            height: 5px;
-            background: repeating-linear-gradient(
-                to right,
-                var(--primary-color),
-                var(--primary-color) 10px,
-                var(--secondary-color) 10px,
-                var(--secondary-color) 20px
-            );
-            margin: 2rem 0;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--dark-color);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo span {
-            color: var(--light-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-
-        nav ul li a {
-            color: var(--light-color);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--light-color);
-            font-size: 1.5rem;
-        }
-
-        /* Hero Section */
-        #hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800') center center/cover;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
+            padding: 3rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            animation: glow 1.5s ease-in-out infinite alternate;
+        section:not(#process) {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in, transform 1s ease-in;
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-color), 0 0 20px var(--primary-color);
-            }
-            to {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
-            }
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        /* About Section */
-        .about-cards {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-        }
-
-        .about-card {
-            flex: 1;
-            min-width: 300px;
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 1rem;
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .about-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        /* Services Section */
-        .service-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .service-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .service-content, .service-image {
-            flex: 1;
-            min-width: 300px;
-            padding: 1rem;
-        }
-
-        .service-image img {
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-        }
-
-        .service-image img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Gallery Section */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: all 0.3s;
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: var(--light-color);
-            transform: translateY(100%);
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover .gallery-caption {
+        section:not(#process).visible {
+            opacity: 1;
             transform: translateY(0);
         }
 
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .gallery-filter {
-            background: none;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
-            cursor: pointer;
-            border-radius: 5px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.7rem;
-            transition: all 0.3s;
-        }
-
-        .gallery-filter:hover, .gallery-filter.active {
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            position: relative;
-            max-width: 800px;
-            margin: 3rem auto;
-        }
-
-        .testimonial {
+        h2 {
+            font-family: var(--pixel-font), sans-serif;
+            color: var(--retro-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             text-align: center;
-            padding: 2rem;
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
         }
 
-        .testimonial::before {
-            content: '"';
-            font-family: 'Press Start 2P', cursive;
-            font-size: 4rem;
-            color: var(--primary-color);
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            opacity: 0.4;
-        }
-
-        .testimonial::after {
-            content: '"';
-            font-family: 'Press Start 2P', cursive;
-            font-size: 4rem;
-            color: var(--primary-color);
-            position: absolute;
-            bottom: -50px;
-            right: 20px;
-            opacity: 0.4;
-        }
-
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-top: 1rem;
-        }
-
-        .testimonial-handle {
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-        }
-
-        /* Blog Section */
-        .blog-posts {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
-        .blog-post {
-            background-color: rgba(30, 30, 30, 0.8);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-        }
-
-        .blog-post:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .blog-post img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-content {
+        .service-card {
+            background: var(--retro-cream);
+            color: var(--retro-charcoal);
             padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
-        .blog-category {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-family: var(--pixel-font), sans-serif;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
-        .blog-title {
-            font-size: 1.2rem;
+        .service-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 1rem;
+            opacity: 0;
+            max-height: 0;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+        }
+
+        .service-card:hover ul {
+            opacity: 1;
+            max-height: 200px;
+        }
+
+        .service-card li {
             margin-bottom: 0.5rem;
         }
 
-        .blog-date {
-            color: #aaa;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
+        .process-card {
+            background: var(--retro-cream);
+            color: var(--retro-charcoal);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+            text-align: center;
+            margin: 0 auto 2rem;
+            max-width: 400px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        /* Contact Section */
-        .contact-container {
+        .process-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-card h3 {
+            font-family: var(--pixel-font), sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--retro-blue);
+        }
+
+        .process-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .process-card p {
+            font-size: 1.1rem;
+            max-width: 100%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: var(--retro-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--retro-blue);
+        }
+
+        .stat-card h3 {
+            font-family: var(--pixel-font), sans-serif;
+            font-size: 2rem;
+            color: var(--retro-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            font-size: 1rem;
+        }
+
+        .gallery-grid {
+            column-count: 3;
+            column-gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-card {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            background: var(--retro-cream);
+            color: var(--retro-charcoal);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .testimonials-carousel {
             display: flex;
-            flex-wrap: wrap;
-            margin-top: 3rem;
+            overflow-x: auto;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+        }
+
+        .testimonials-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .testimonials-carousel::-webkit-scrollbar-thumb {
+            background: var(--retro-blue);
+            border-radius: 4px;
+        }
+
+        .testimonials-carousel::-webkit-scrollbar-track {
+            background: var(--retro-gray);
+        }
+
+        .testimonial-card {
+            flex: 0 0 300px;
+            background: var(--retro-cream);
+            color: var(--retro-charcoal);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
+            text-align: center;
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+        }
+
+        .testimonial-card p:last-child {
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        #contact {
+            background: url('https://via.placeholder.com/1200x600?text=Retro+Console+Pattern') no-repeat center/cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(28, 37, 38, 0.8);
+            z-index: 1;
+        }
+
+        #contact > * {
+            position: relative;
+            z-index: 2;
         }
 
         .contact-form {
-            flex: 1;
-            min-width: 300px;
-            padding: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.8rem;
+            border: 2px solid var(--retro-blue);
+            border-radius: 4px;
+            background: var(--retro-charcoal);
+            color: var(--retro-cream);
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 0.8rem;
+            background: var(--retro-blue);
+            color: var(--retro-cream);
+            border: none;
+            border-radius: 4px;
+            font-family: var(--pixel-font), sans-serif;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--retro-green);
         }
 
         .contact-info {
-            flex: 1;
-            min-width: 300px;
-            padding: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: none;
-            background-color: rgba(40, 40, 40, 0.8);
-            color: var(--light-color);
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .form-control:focus {
-            outline: 2px solid var(--primary-color);
-        }
-
-        select.form-control {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffde00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 30px;
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-        }
-
-        .contact-social {
             margin-top: 2rem;
-        }
-
-        .contact-social a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(40, 40, 40, 0.8);
-            color: var(--primary-color);
             text-align: center;
-            line-height: 40px;
-            margin-right: 0.8rem;
-            transition: all 0.3s;
         }
 
-        .contact-social a:hover {
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            transform: translateY(-3px);
+        .contact-info p {
+            margin-bottom: 0.5rem;
         }
 
-        .map {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            margin-top: 2rem;
-        }
-
-        /* Footer */
         footer {
-            background-color: rgba(10, 10, 10, 0.9);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
+            background: var(--retro-gray);
             padding: 1rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: #ddd;
-            transition: all 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .retro-icons {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .retro-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 0.8rem;
-            margin-bottom: 0.8rem;
-            background-color: var(--dark-color);
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--primary-color);
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-top: 1rem;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            background-color: rgba(40, 40, 40, 0.8);
-            color: var(--light-color);
-        }
-
-        .newsletter-btn {
-            padding: 0 1rem;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-
-        .copyright {
             text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid var(--retro-blue);
+        }
+
+        footer p {
             font-size: 0.9rem;
-            color: #aaa;
         }
 
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Styles */
         @media (max-width: 768px) {
             header {
-                padding: 1rem;
+                padding: 4rem 1rem;
+                min-height: 400px;
             }
 
-            .header-container {
-                flex-direction: column;
-                text-align: center;
+            header h1 {
+                font-size: 3rem;
             }
 
-            nav {
-                margin-top: 1rem;
+            header p {
+                font-size: 1.8rem;
             }
 
             nav ul {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .about-cards {
-                flex-direction: column;
-            }
-
-            .service-item, .service-item:nth-child(even) {
-                flex-direction: column;
-            }
-
-            .contact-container {
-                flex-direction: column;
-            }
-
-            .footer-container {
-                flex-direction: column;
-            }
-
-            .footer-section {
-                margin-bottom: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .container {
-                padding: 0 1rem;
+                gap: 1rem;
+                text-align: center;
             }
 
             section {
-                padding: 3rem 0;
+                padding: 2rem 1rem;
             }
 
-            .gallery {
-                grid-template-columns: 1fr;
+            .gallery-grid {
+                column-count: 1;
             }
 
-            .blog-posts {
-                grid-template-columns: 1fr;
+            .testimonials-carousel {
+                flex-direction: column;
+                overflow-x: hidden;
+            }
+
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+
+            .process-card {
+                max-width: 100%;
+                padding: 1.5rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#home" class="nav-brand" id="home-link">
+                    <svg class="nav-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <!-- SEGA Controller Shape -->
+                        <rect x="5" y="10" width="30" height="20" rx="4" fill="currentColor"/>
+                        <!-- D-pad -->
+                        <rect x="8" y="15" width="6" height="2" fill="var(--retro-charcoal)"/>
+                        <rect x="10" y="13" width="2" height="6" fill="var(--retro-charcoal)"/>
+                        <!-- Buttons (A and B) -->
+                        <circle cx="25" cy="15" r="2" fill="var(--retro-charcoal)"/>
+                        <circle cx="30" cy="15" r="2" fill="var(--retro-charcoal)"/>
+                    </svg>
+                    <span>Retro Saviour</span>
+                </a>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <header>
-        <div class="container header-container">
-            <div class="logo">RETRO<span>SAVIOUR</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Restoring and Reviving Your Sega and Atari Consoles</h1>
+        <p>Specializing in expert repairs to bring your classic gaming devices back to life with passion and precision.</p>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container hero-content">
-            <h1>BREATHING NEW LIFE INTO GAMING CLASSICS</h1>
-            <p>We specialize in restoring, repairing, and preserving your beloved retro gaming systems. From NES to Dreamcast, we've got you covered.</p>
-            <a href="#contact" class="btn btn-large">RESCUE MY CONSOLE</a>
-        </div>
+    <section id="home">
+        <h2>Welcome to Retro Saviour</h2>
+        <p>We're dedicated to bringing your retro gaming devices back to life. Whether it's a flickering Sega Game Gear screen or a silent Atari Lynx, our expert repairs restore the magic of classic gaming. Let's keep the nostalgia alive!</p>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="text-center">THE RETRO GAMING SAVIORS</h2>
-            <p class="text-center">With over a decade of experience, our team is passionate about preserving gaming history and ensuring these classic machines continue to bring joy for generations to come.</p>
-            
-            <div class="about-cards">
-                <div class="about-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Console Restoration</h3>
-                    <p>We bring old consoles back to life with detailed cleaning, part replacement, and careful restoration techniques.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-save"></i>
-                    <h3>Game Preservation</h3>
-                    <p>Our team specializes in cartridge cleaning, battery replacement, and data backup to keep your games playable.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Retro Community</h3>
-                    <p>Join our growing community of retro gaming enthusiasts who share tips, memories, and a passion for classic games.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
     <section id="services">
-        <div class="container">
-            <h2 class="text-center">OUR SERVICES</h2>
-            <p class="text-center">We offer comprehensive solutions for all your retro gaming needs, from simple repairs to complex restorations.</p>
-            
-            <div class="service-item">
-                <div class="service-content">
-                    <h3>Console Repair & Restoration</h3>
-                    <p>Our expert technicians can fix almost any issue with your retro systems:</p>
-                    <ul>
-                        <li>Power supply issues</li>
-                        <li>Video output problems</li>
-                        <li>Controller port repairs</li>
-                        <li>Complete shell restoration</li>
-                        <li>Capacitor replacement</li>
-                    </ul>
-                    <a href="#contact" class="btn">Get Started</a>
-                </div>
-                <div class="service-image">
-                    <img src="/api/placeholder/500/300" alt="Console Repair">
-                </div>
+        <h2>Our Repair Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Sega Game Gear Repair</h3>
+                <p>Comprehensive repair services for your Sega Game Gear.</p>
+                <ul>
+                    <li>Capacitor Replacement: £49</li>
+                    <li>Sound Repair: £49</li>
+                    <li>Retro Six Clean Screen Mod: £74 (if in stock)</li>
+                    <li>Retro Six Mod Install Fee: £25</li>
+                </ul>
             </div>
-            
-            <div class="service-item">
-                <div class="service-content">
-                    <h3>Game Cartridge Rescue</h3>
-                    <p>Don't let your favorite games become unplayable! We provide:</p>
-                    <ul>
-                        <li>Contact cleaning and restoration</li>
-                        <li>Save battery replacement</li>
-                        <li>Label restoration</li>
-                        <li>Case repair</li>
-                        <li>Data recovery</li>
-                    </ul>
-                    <a href="#contact" class="btn">Learn More</a>
-                </div>
-                <div class="service-image">
-                    <img src="/api/placeholder/500/300" alt="Cartridge Repair">
-                </div>
+            <div class="service-card">
+                <h3>Atari Lynx Repair</h3>
+                <p>Specialized services for Atari Lynx 1 and 2.</p>
+                <ul>
+                    <li>Full Recap (Lynx 1): £59</li>
+                    <li>Full Recap (Lynx 2): £59</li>
+                    <li>BennVenn Screen for Lynx 1 or 2: £80 (shipped from Australia)</li>
+                    <li>BennVenn Screen Mod Install (Lynx 1): £30</li>
+                    <li>BennVenn Screen Mod Install (Lynx 2): £10</li>
+                </ul>
             </div>
-            
-            <div class="service-item">
-                <div class="service-content">
-                    <h3>Hardware Modification</h3>
-                    <p>Upgrade your retro systems with modern conveniences:</p>
-                    <ul>
-                        <li>HDMI output mods</li>
-                        <li>RGB/component upgrades</li>
-                        <li>Audio enhancements</li>
-                        <li>Region-free modifications</li>
-                        <li>LED lighting upgrades</li>
-                    </ul>
-                    <a href="#contact" class="btn">Explore Options</a>
-                </div>
-                <div class="service-image">
-                    <img src="/api/placeholder/500/300" alt="Hardware Mods">
-                </div>
+            <div class="service-card">
+                <h3>Other Services</h3>
+                <p>We also offer repairs for other retro consoles.</p>
+                <ul>
+                    <li>Contact us for details!</li>
+                </ul>
             </div>
-            
-            <div class="service-item">
-                <div class="service-content">
-                    <h3>Preservation Services</h3>
-                    <p>Ensure your gaming legacy lives on with our preservation services:</p>
-                    <ul>
-                        <li>Game data backup</li>
-                        <li>Custom storage solutions</li>
-                        <li>Flash cart setup</li>
-                        <li>Console archiving</li>
-                        <li>Collection documentation</li>
-                    </ul>
-                    <a href="#contact" class="btn">Preserve Now</a>
-                </div>
-                <div class="service-image">
-                    <img src="/api/placeholder/500/300" alt="Preservation Services">
-                </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">Quick Turnaround: We aim to send back your repaired console as soon as possible using Royal Mail Tracked 48.</p>
+    </section>
+
+    <section id="process">
+        <h2>Our Repair Journey</h2>
+        <div class="process-card">
+            <span class="emoji">📩</span>
+            <h3>Hit Us Up!</h3>
+            <p>Contact Retro Saviour and drop us a line—start your epic quest to revive your Sega or Atari!</p>
+        </div>
+        <div class="process-card">
+            <span class="emoji">💬</span>
+            <h3>Chat Like Champs!</h3>
+            <p>Discuss your service needs with us—let’s plan your console’s big comeback!</p>
+        </div>
+        <div class="process-card">
+            <span class="emoji">📦</span>
+            <h3>Ship & Pay Like a Pro!</h3>
+            <p>Post your device and pay for the service—your ticket to gaming glory is on its way!</p>
+        </div>
+        <div class="process-card">
+            <span class="emoji">🛠️</span>
+            <h3>Repair with Retro Vibes!</h3>
+            <p>We’ll fix it with continuous communication—stay tuned for the action-packed repair updates!</p>
+        </div>
+        <div class="process-card">
+            <span class="emoji">🚛</span>
+            <h3>Back with a Bang!</h3>
+            <p>Get your repaired device back with tracking—or a refund if we can’t save the day!</p>
+        </div>
+        <div class="process-card">
+            <span class="emoji">🎮</span>
+            <h3>Game On, Hero!</h3>
+            <p>Happy gaming—enjoy your revived classic and level up your retro adventures!</p>
+        </div>
+    </section>
+
+    <section id="stats">
+        <h2>Our Achievements</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>160+</h3>
+                <p>Devices Repaired</p>
+            </div>
+            <div class="stat-card">
+                <h3>92%</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-card">
+                <h3>7+</h3>
+                <p>Years of Experience</p>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery">
-        <div class="container">
-            <h2 class="text-center">FEATURED RESTORATIONS</h2>
-            <p class="text-center">Take a look at some of our most impressive console restoration projects and transformations.</p>
-            
-            <div class="gallery-filters">
-                <button class="gallery-filter active" data-filter="all">All</button>
-                <button class="gallery-filter" data-filter="nintendo">Nintendo</button>
-                <button class="gallery-filter" data-filter="sega">Sega</button>
-                <button class="gallery-filter" data-filter="atari">Atari</button>
-                <button class="gallery-filter" data-filter="sony">Sony</button>
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="images/Atari-Lynx-Displaying-ZARLOR.jpg" alt="Atari Lynx Displaying ZARLOR">
+                <p>Atari Lynx with BennVenn Screen Mod</p>
             </div>
-            
-            <div class="gallery">
-                <div class="gallery-item" data-category="nintendo">
-                    <img src="/api/placeholder/300/200" alt="NES Restoration">
-                    <div class="gallery-caption">
-                        <h3>NES Restoration</h3>
-                        <p>Severe yellowing and broken cartridge slot repaired</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="sega">
-                    <img src="/api/placeholder/300/200" alt="
+            <div class="gallery-card">
+                <img src="images/Sega-Game-Gear-Displaying-Sonic-the-Hedgehog.jpg" alt="Sega Game Gear Displaying Sonic the Hedgehog">
+                <p>Sega Game Gear with Retro Six Clean Screen</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/Atari-Lynx-Internals.jpg" alt="Atari Lynx Internals">
+                <p>Inside an Atari Lynx during repair</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/Sega-Game-Gear-Internals.jpg" alt="Sega Game Gear Internals">
+                <p>Inside a Sega Game Gear during repair</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/Sega-Game-Gear-Back-Copper-Shielding.jpg" alt="Sega Game Gear Back Copper Shielding">
+                <p>Sega Game Gear with copper shielding</p>
+            </div>
+            <div class="gallery-card">
+                <img src="images/Workspace-with-Microscope-and-Monitor.jpg" alt="Workspace with Microscope and Monitor">
+                <p>Our dedicated repair workspace</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-carousel">
+            <div class="testimonial-card">
+                <p>"Great service, will definitely recommend."</p>
+                <p>- starlord1980 (Sega Game Gear Repair RECAP Service)</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Arrived safely and works great! There are a couple of scratches on the glass, which I'm not certain happened in shipment, but I'm glad it arrived in one piece."</p>
+                <p>- lamthewalrus77 (Atari Lynx 1 BennVenn Screen With Game)</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Great seller. As described. Fast dispatch. Well packaged and great communication. Thanks."</p>
+                <p>- baver3016 (Atari Lynx 1 Console Original MK1)</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"I sent a Game Gear for repair on a Monday and got it back fully working fine on the Friday, good service and nice guy kept me informed throughout, Thanks."</p>
+                <p>- wain_jame</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Fantastic item, really happy with it. Item exactly as described, priced really well. The item was in great protective packaging and sellers comms was great throughout."</p>
+                <p>- stratmaster_85 (Retro Six Clean Screen Fully Recapped)</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Great person to deal with, came back working. Speedy turnaround. Thank you."</p>
+                <p>- sonic5tails (Sega Game Gear Repair RECAP Service)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" onsubmit="alert('Form submitted! We\'ll get back to you soon.'); return false;">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Telephone">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p>Email: contact@retro-saviour.co.uk</p>
+            <p>Address: Cardiff, Wales</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Retro Saviour. All rights reserved. Keeping retro gaming alive, one console at a time.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const processCards = document.querySelectorAll('.process-card');
+            const otherSections = document.querySelectorAll('section:not(#process)');
+            const homeLink = document.getElementById('home-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            processCards.forEach(card => {
+                observer.observe(card);
+            });
+
+            otherSections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Ensure smooth scrolling to top when clicking the logo
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
