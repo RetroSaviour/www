@@ -1,5 +1,22 @@
-/* Tablet styles */
-@media (max-width: 992px) {
+/* ====================================
+   1. TABLET RESPONSIVE STYLES (768px - 995px)
+   ==================================== */
+   @media (max-width: 995px) {
+    /* Typography */
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+    
+    /* Layout */
+    section {
+      padding: 3rem 1.5rem;
+    }
+    
+    /* Services section */
     .services-grid {
       grid-template-columns: 1fr;
     }
@@ -12,6 +29,7 @@
       grid-column: 1;
     }
     
+    /* Process section */
     .process-timeline {
       left: 20px;
     }
@@ -31,106 +49,89 @@
       left: -30px;
     }
     
-    h1 {
-      font-size: 2rem;
-    }
-    
-    h2 {
-      font-size: 1.8rem;
-    }
-  }
-  
-  /* Mobile styles */
-  @media (max-width: 768px) {
-    nav {
-      padding: 1rem;
-    }
-    
-    .nav-toggle {
-      display: block;
-      z-index: 2000;
-    }
-    
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 80%;
-      max-width: 300px;
-      background: var(--retro-dark);
-      padding: 5rem 2rem 2rem;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      box-shadow: -5px 0 25px rgba(0,0,0,0.5);
-      z-index: 999;
-    }
-    
-    .nav-menu.show {
-      transform: translateX(0);
-    }
-    
-    .nav-link {
-      width: 100%;
-      padding: 1rem;
-    }
-    
-    body.menu-open {
-      overflow: hidden;
-    }
-    
-    .nav-menu::before {
-      opacity: 0.2;
-    }
-    
-    .menu-open .nav-toggle-bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    
-    .menu-open .nav-toggle-bar:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .menu-open .nav-toggle-bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-    
+    /* Statistics */
     .stats-grid {
       grid-template-columns: 1fr;
     }
     
+    /* Gallery */
     .gallery-grid {
       grid-auto-rows: 200px;
     }
-    
+  }
+  
+  /* ====================================
+     2. MOBILE RESPONSIVE STYLES (< 768px)
+     ==================================== */
+  @media (max-width: 767px) {
+    /* Additional styles specific to larger phones */
     section {
-      padding: 3rem 1.5rem;
+      padding: 2.5rem 1rem;
     }
   }
   
-  /* Small mobile styles */
+  /* ====================================
+     3. SMALL MOBILE STYLES (< 480px)
+     ==================================== */
   @media (max-width: 480px) {
-    header {
-      min-height: 70vh;
-    }
-    
+    /* Typography */
     h1 {
       font-size: 1.5rem;
     }
     
-    .nav-brand {
-      font-size: 1.2rem;
+    h2 {
+      font-size: 1.4rem;
     }
     
+    /* Layout */
+    section {
+      padding: 2rem 1rem;
+    }
+    
+    /* Header */
+    header {
+      min-height: 70vh;
+    }
+    
+    /* Hero section */
     .hero-cta {
       padding: 10px 20px;
       font-size: 0.8rem;
     }
     
+    /* Gallery */
     .gallery-grid {
       grid-template-columns: 1fr;
+    }
+    
+    /* Process cards */
+    .process-card {
+      padding: 1rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    
+    .social-links {
+      justify-content: center;
+    }
+  }
+  
+  /* ====================================
+     4. UTILITY RESPONSIVE CLASSES
+     ==================================== */
+  @media (max-width: 768px) {
+    .mobile-hide {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .desktop-hide {
+      display: none !important;
     }
   }

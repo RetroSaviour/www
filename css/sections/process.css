@@ -110,3 +110,116 @@
   .process-card:nth-child(even)::after {
     left: -30px;
   }
+
+  /* Update the media query section for tablets and mobile */
+@media (max-width: 995px) {
+  /* Hide timeline completely */
+  .process-timeline {
+    display: none !important;
+  }
+  
+  /* Fix container layout */
+  .process-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* Reset all desktop positioning first - with !important to override any other styles */
+  .process-card:nth-child(odd),
+  .process-card:nth-child(even) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-left: none !important;
+    border-right: none !important;
+    width: 100% !important;
+    margin-bottom: 0 !important; /* Remove bottom margin from desktop */
+  }
+  
+  /* Now apply consistent styling for all cards */
+  .process-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto; /* Center all cards */
+    border: 2px solid var(--accent-purple);
+    border-top: 4px solid var(--accent-gold);
+    padding: 1.5rem;
+    background: var(--bg-dark);
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    position: relative;
+    opacity: 1; /* Ensure visibility */
+    transform: none; /* Reset any transforms */
+    transition: none; /* Disable animations that might cause issues */
+  }
+  
+  /* Remove the timeline dots */
+  .process-card::before {
+    display: none !important;
+  }
+  
+  /* Remove connecting lines */
+  .process-card::after {
+    display: none !important;
+  }
+  
+  /* Rest of your mobile styles remain the same */
+  .process-card {
+    counter-increment: process-step;
+  }
+  
+  /* Keep your heading styles */
+  .process-card h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Keep your numbering */
+  .process-card h3::before {
+    content: counter(process-step) ".";
+    color: var(--accent-gold);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .process-container {
+    gap: 1.5rem; /* Slightly smaller gap for very small screens */
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+  
+  /* Process cards on very small screens */
+  .process-card {
+    padding: 1.25rem 1rem;
+    margin: 0 auto; /* Ensure proper centering */
+    border-width: 1px; /* Thinner borders to save space */
+    border-top-width: 3px; /* Keep the top accent visible */
+  }
+  
+  /* Smaller text for better fit */
+  .process-card h3 {
+    font-size: 1rem;
+  }
+  
+  /* Smaller emoji */
+  .process-card .emoji {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Smaller step numbers */
+  .process-card h3::before {
+    font-size: 0.9rem;
+  }
+}

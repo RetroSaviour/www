@@ -1,4 +1,7 @@
-nav {
+/* ====================================
+   1. DESKTOP NAVIGATION STYLES
+   ==================================== */
+   nav {
     background: var(--retro-dark);
     backdrop-filter: blur(10px);
     padding: 0;
@@ -20,6 +23,7 @@ nav {
     padding: 0.5rem 1.5rem;
   }
   
+  /* Logo and branding */
   .nav-brand {
     text-decoration: none;
     display: flex;
@@ -34,18 +38,18 @@ nav {
   }
   
   .nav-logo {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     transition: transform 0.3s ease;
-    display: block; /* Ensures proper rendering */
+    display: block;
   }
   
-  /* If your SVG needs specific adjustments */
   .nav-logo img {
     max-width: 100%;
     height: auto;
   }
   
+  /* Branding hover effects */
   .nav-brand:hover .nav-logo {
     transform: rotate(-5deg) scale(1.1);
   }
@@ -55,6 +59,7 @@ nav {
                  4px 4px 0 rgba(0, 0, 0, 0.2);
   }
   
+  /* Navigation menu */
   .nav-menu {
     display: flex;
     gap: 1.5rem;
@@ -78,6 +83,7 @@ nav {
     opacity: 0.5;
   }
   
+  /* Navigation links */
   .nav-link {
     position: relative;
     text-decoration: none;
@@ -139,7 +145,7 @@ nav {
     animation: pulse 1s infinite alternate;
   }
   
-  /* Mobile toggle button */
+  /* Hamburger menu toggle (hidden on desktop) */
   .nav-toggle {
     display: none;
     background: none;
@@ -150,10 +156,136 @@ nav {
   
   .nav-toggle-bar {
     display: block;
-    width: 25px;
+    width: 28px;
     height: 3px;
     margin: 5px 0;
     background-color: var(--primary-red);
     border-radius: 3px;
     transition: all 0.3s ease;
+  }
+  
+  /* ====================================
+     2. TABLET NAVIGATION STYLES
+     ==================================== */
+  @media (max-width: 995px) {
+    /* Navbar sizing */
+    nav, .nav-container {
+      height: 60px;
+      padding: 0 1rem;
+    }
+    
+    /* Logo sizing */
+    .nav-logo {
+      width: 38px;
+      height: 38px;
+    }
+    
+    .title-text {
+      font-size: 1.2rem;
+    }
+    
+    /* Hamburger toggle */
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2000;
+    }
+    
+    /* Mobile menu */
+    .nav-menu {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      height: calc(100vh - 60px);
+      width: 80%;
+      max-width: 300px;
+      background: var(--retro-dark);
+      padding: 2rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    
+    .nav-menu.show {
+      transform: translateX(0);
+    }
+    
+    .nav-link {
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    /* Hamburger animation */
+    .menu-open .nav-toggle-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  
+  /* ====================================
+     3. MOBILE NAVIGATION STYLES
+     ==================================== */
+  @media (max-width: 480px) {
+    /* Smaller navbar */
+    nav, .nav-container {
+      height: 50px;
+      padding: 0 0.75rem;
+    }
+    
+    /* Smaller logo */
+    .nav-logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    
+    .title-text {
+      font-size: 1rem;
+    }
+    
+    /* Smaller hamburger */
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2000;
+    }
+  
+    .nav-toggle-bar {
+      width: 24px;
+      height: 2px;
+      margin: 4px 0;
+    }
+    
+    /* Mobile menu positioning */
+    .nav-menu {
+      top: 50px;
+      height: calc(100vh - 50px);
+      padding: 1.5rem;
+    }
+    
+    /* Adjusted hamburger animation for smaller size */
+    .menu-open .nav-toggle-bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
   }
