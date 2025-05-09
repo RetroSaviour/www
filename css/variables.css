@@ -1,0 +1,31 @@
+:root {
+    /* Colors */
+    --primary-red: #e81c28;     /* Welsh red */
+    --primary-green: #24ac51;   /* Welsh green */
+    --retro-dark: #1c1c28;      /* Dark blue-black */
+    --retro-light: #f2f2f2;     /* Off-white */
+    --accent-gold: #fcba03;     /* Gold accent */
+    --accent-purple: #9b30ff;   /* Purple accent */
+    
+    /* Fonts */
+    --pixel-font: 'Press Start 2P', cursive;
+    --graffiti-font: 'VT323', monospace;
+    --body-font: 'Rubik', sans-serif;
+    
+    /* Gradients and Effects */
+    --scanline-bg: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    
+    /* Shadows */
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --text-shadow: 2px 2px 0 var(--primary-red), 4px 4px 0 rgba(0, 0, 0, 0.2);
+    
+    /* Spacing */
+    --section-padding: 5rem 2rem;
+    --card-padding: 1.5rem;
+  }

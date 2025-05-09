@@ -1,0 +1,66 @@
+#services {
+    background: radial-gradient(ellipse at top right, rgba(36, 172, 81, 0.1), transparent 70%);
+    position: relative;
+  }
+  
+  #services::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, var(--retro-dark), transparent);
+    z-index: 1;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .service-card.featured {
+    transform: scale(1.05);
+  }
+  
+  .service-card.featured::after {
+    content: "Popular";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-red);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+    font-family: var(--pixel-font);
+    transform: rotate(3deg);
+  }
+  
+  .other-services {
+    grid-column: span 2;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px dashed rgba(36, 172, 81, 0.3);
+  }
+  
+  .other-services h3 {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+  }
+  
+  .other-services a {
+    color: var(--primary-green);
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+  
+  .other-services a:hover {
+    color: var(--primary-red);
+  }

@@ -1,0 +1,57 @@
+h1, h2, h3 {
+    font-family: var(--pixel-font);
+    margin-bottom: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    text-shadow: var(--text-shadow);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: var(--primary-green);
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  
+  /* Underline effect for section headers */
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-red);
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .title-text {
+    font-family: var(--pixel-font);
+    color: var(--retro-light);
+    font-size: 1.2rem;
+    text-shadow: var(--text-shadow);
+    transition: text-shadow 0.3s;
+  }
+  
+  .welsh-tagline {
+    font-family: var(--body-font);
+    font-size: 0.7rem;
+    color: var(--primary-green);
+    font-style: italic;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }

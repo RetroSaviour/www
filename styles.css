@@ -1,0 +1,26 @@
+/* Main stylesheet that imports all component stylesheets */
+
+/* Import base styles */
+@import 'css/variables.css';
+@import 'css/reset.css';
+@import 'css/typography.css';
+
+/* Import layout and components */
+@import 'css/layout.css';
+@import 'css/navigation.css';
+@import 'css/components.css';
+
+/* Import section-specific styles */
+@import 'css/sections/hero.css';
+@import 'css/sections/home.css';
+@import 'css/sections/services.css';
+@import 'css/sections/process.css';
+@import 'css/sections/stats.css'; 
+@import 'css/sections/gallery.css';
+@import 'css/sections/testimonials.css';
+@import 'css/sections/contact.css';
+
+/* Import utilities and responsive styles */
+@import 'css/animations.css';
+@import 'css/utilities.css';
+@import 'css/responsive.css';

@@ -1,0 +1,112 @@
+#process {
+    background: radial-gradient(ellipse at bottom left, rgba(232, 28, 40, 0.1), transparent 70%);
+    padding-bottom: 6rem;
+  }
+  
+  .process-container {
+    position: relative;
+    margin: 4rem 0;
+    padding: 20px 0;
+  }
+  
+  .process-timeline {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--primary-red);
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, var(--primary-red), var(--primary-green));
+  }
+  
+  .process-card {
+    width: 45%;
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s, transform 0.5s;
+    border-left: 3px solid var(--primary-red);
+    border-right: 3px solid var(--primary-green);
+  }
+  
+  .process-card:nth-child(even) {
+    border-right: 3px solid var(--primary-red);
+    border-left: 3px solid var(--primary-green);
+  }
+  
+  .process-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .process-card:nth-child(odd) {
+    margin-right: auto;
+  }
+  
+  .process-card:nth-child(even) {
+    margin-left: auto;
+  }
+  
+  .process-card::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-green);
+    border-radius: 50%;
+    top: 50%;
+    box-shadow: 0 0 0 4px rgba(36, 172, 81, 0.3);
+    z-index: 1;
+  }
+  
+  .process-card:nth-child(odd)::before {
+    right: -30px;
+    transform: translate(0, -50%);
+  }
+  
+  .process-card:nth-child(even)::before {
+    left: -30px;
+    transform: translate(0, -50%);
+  }
+  
+  .process-card .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+  }
+  
+  .process-card h3 {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .process-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* Connecting lines animation */
+  .process-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 3px;
+    background: var(--accent-gold);
+  }
+  
+  .process-card:nth-child(odd)::after {
+    right: -30px;
+  }
+  
+  .process-card:nth-child(even)::after {
+    left: -30px;
+  }

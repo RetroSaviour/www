@@ -1,0 +1,136 @@
+/* Tablet styles */
+@media (max-width: 992px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .service-card.featured {
+      transform: none;
+    }
+    
+    .other-services {
+      grid-column: 1;
+    }
+    
+    .process-timeline {
+      left: 20px;
+    }
+    
+    .process-card {
+      width: 90%;
+      margin-left: auto;
+    }
+    
+    .process-card::before {
+      left: -30px;
+      transform: translate(0, -50%);
+    }
+    
+    .process-card:nth-child(odd)::before,
+    .process-card:nth-child(even)::before {
+      left: -30px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem;
+    }
+    
+    .nav-toggle {
+      display: block;
+      z-index: 2000;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 80%;
+      max-width: 300px;
+      background: var(--retro-dark);
+      padding: 5rem 2rem 2rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    
+    .nav-menu.show {
+      transform: translateX(0);
+    }
+    
+    .nav-link {
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    body.menu-open {
+      overflow: hidden;
+    }
+    
+    .nav-menu::before {
+      opacity: 0.2;
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .menu-open .nav-toggle-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+      grid-auto-rows: 200px;
+    }
+    
+    section {
+      padding: 3rem 1.5rem;
+    }
+  }
+  
+  /* Small mobile styles */
+  @media (max-width: 480px) {
+    header {
+      min-height: 70vh;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .nav-brand {
+      font-size: 1.2rem;
+    }
+    
+    .hero-cta {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+    
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }

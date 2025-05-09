@@ -1,572 +1,143 @@
+\GitHub\www\index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Saviour - Reviving Your Retro Gaming Classics</title>
-    <style>
-        :root {
-            --retro-gray: #333333;
-            --retro-blue: #0066CC;
-            --retro-charcoal: #1C2526;
-            --retro-cream: #E6E6D4;
-            --retro-purple: #78bbff;
-            --retro-green: #33CC66;
-            --pixel-font: 'Press Start 2P', sans-serif;
-            --graffiti-font: 'VT323', monospace;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--retro-charcoal);
-            color: var(--retro-cream);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        nav {
-            background: var(--retro-gray);
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 2px solid var(--retro-blue);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--retro-cream);
-            text-decoration: none;
-            font-family: var(--pixel-font), sans-serif;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--retro-green);
-        }
-
-        .nav-icon {
-            width: 40px;
-            height: 40px;
-            fill: var(--retro-cream);
-            transition: fill 0.3s;
-            vertical-align: middle;
-        }
-
-        .nav-icon:hover {
-            fill: var(--retro-green);
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-brand span {
-            font-family: var(--pixel-font), sans-serif;
-            font-size: 1rem;
-            color: var(--retro-cream);
-            transition: color 0.3s;
-        }
-
-        .nav-brand:hover span {
-            color: var(--retro-green);
-        }
-
-        header {
-            background: url('images/Shelf-with-Retro-Consoles.jpg') no-repeat center/cover;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            border-bottom: 4px solid var(--retro-blue);
-            min-height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        header h1, header p {
-            position: relative;
-            z-index: 2;
-        }
-
-        header h1 {
-            font-family: var(--graffiti-font), monospace;
-            color: var(--retro-purple);
-            font-size: 4.5rem;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
-            margin-bottom: 1rem;
-        }
-
-        header p {
-            font-family: var(--graffiti-font), monospace;
-            font-size: 2.2rem;
-            max-width: 800px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
-            color: var(--retro-cream);
-        }
-
-        section {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section:not(#process) {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-in, transform 1s ease-in;
-        }
-
-        section:not(#process).visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            font-family: var(--pixel-font), sans-serif;
-            color: var(--retro-blue);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: var(--retro-cream);
-            color: var(--retro-charcoal);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-
-        .service-card h3 {
-            font-family: var(--pixel-font), sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            text-align: left;
-            margin-top: 1rem;
-            opacity: 0;
-            max-height: 0;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
-        }
-
-        .service-card:hover ul {
-            opacity: 1;
-            max-height: 200px;
-        }
-
-        .service-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .process-card {
-            background: var(--retro-cream);
-            color: var(--retro-charcoal);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
-            text-align: center;
-            margin: 0 auto 2rem;
-            max-width: 400px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .process-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .process-card h3 {
-            font-family: var(--pixel-font), sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--retro-blue);
-        }
-
-        .process-card .emoji {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .process-card p {
-            font-size: 1.1rem;
-            max-width: 100%;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .stat-card {
-            background: var(--retro-gray);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 2px solid var(--retro-blue);
-        }
-
-        .stat-card h3 {
-            font-family: var(--pixel-font), sans-serif;
-            font-size: 2rem;
-            color: var(--retro-purple);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card p {
-            font-size: 1rem;
-        }
-
-        .gallery-grid {
-            column-count: 3;
-            column-gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-card {
-            break-inside: avoid;
-            margin-bottom: 2rem;
-            background: var(--retro-cream);
-            color: var(--retro-charcoal);
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-card:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .testimonials-carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 2rem;
-            margin-top: 2rem;
-            padding-bottom: 1rem;
-            scroll-snap-type: x mandatory;
-        }
-
-        .testimonials-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .testimonials-carousel::-webkit-scrollbar-thumb {
-            background: var(--retro-blue);
-            border-radius: 4px;
-        }
-
-        .testimonials-carousel::-webkit-scrollbar-track {
-            background: var(--retro-gray);
-        }
-
-        .testimonial-card {
-            flex: 0 0 300px;
-            background: var(--retro-cream);
-            color: var(--retro-charcoal);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 102, 204, 0.2);
-            text-align: center;
-            scroll-snap-align: start;
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: scale(1.05);
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-        }
-
-        .testimonial-card p:last-child {
-            font-weight: bold;
-            margin-top: 0.5rem;
-        }
-
-        #contact {
-            background: url('https://via.placeholder.com/1200x600?text=Retro+Console+Pattern') no-repeat center/cover;
-            background-attachment: fixed;
-            position: relative;
-        }
-
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(28, 37, 38, 0.8);
-            z-index: 1;
-        }
-
-        #contact > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 0.8rem;
-            border: 2px solid var(--retro-blue);
-            border-radius: 4px;
-            background: var(--retro-charcoal);
-            color: var(--retro-cream);
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            padding: 0.8rem;
-            background: var(--retro-blue);
-            color: var(--retro-cream);
-            border: none;
-            border-radius: 4px;
-            font-family: var(--pixel-font), sans-serif;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: var(--retro-green);
-        }
-
-        .contact-info {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .contact-info p {
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background: var(--retro-gray);
-            padding: 1rem;
-            text-align: center;
-            border-top: 2px solid var(--retro-blue);
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 4rem 1rem;
-                min-height: 400px;
-            }
-
-            header h1 {
-                font-size: 3rem;
-            }
-
-            header p {
-                font-size: 1.8rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            section {
-                padding: 2rem 1rem;
-            }
-
-            .gallery-grid {
-                column-count: 1;
-            }
-
-            .testimonials-carousel {
-                flex-direction: column;
-                overflow-x: hidden;
-            }
-
-            .testimonial-card {
-                flex: 0 0 100%;
-            }
-
-            .process-card {
-                max-width: 100%;
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <ul>
-            <li>
-                <a href="#home" class="nav-brand" id="home-link">
-                    <svg class="nav-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                        <!-- SEGA Controller Shape -->
-                        <rect x="5" y="10" width="30" height="20" rx="4" fill="currentColor"/>
-                        <!-- D-pad -->
-                        <rect x="8" y="15" width="6" height="2" fill="var(--retro-charcoal)"/>
-                        <rect x="10" y="13" width="2" height="6" fill="var(--retro-charcoal)"/>
-                        <!-- Buttons (A and B) -->
-                        <circle cx="25" cy="15" r="2" fill="var(--retro-charcoal)"/>
-                        <circle cx="30" cy="15" r="2" fill="var(--retro-charcoal)"/>
-                    </svg>
-                    <span>Retro Saviour</span>
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <div class="logo-container">
+                    <!-- Custom Retro Saviour Icon -->
+                    <img src="images/retro-saviour-icon.svg" alt="Retro Saviour Logo" class="nav-logo">
+                    <span class="title-text">Retro Saviour</span>
+                </div>
+            </a>
+            
+            <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            </button>
+            
+            <div class="nav-menu">
+                <a href="#services" class="nav-link">
+                    <span class="nav-icon">🎮</span>
+                    <span class="nav-text">Services</span>
                 </a>
-            </li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+                <a href="#testimonials" class="nav-link">
+                    <span class="nav-icon">🏆</span>
+                    <span class="nav-text">Testimonials</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-icon">📱</span>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+        </div>
     </nav>
 
     <header>
         <h1>Restoring and Reviving Your Sega and Atari Consoles</h1>
         <p>Specializing in expert repairs to bring your classic gaming devices back to life with passion and precision.</p>
+        <a href="#contact" class="hero-cta">Get Your Repair Quote</a>
     </header>
 
     <section id="home">
         <h2>Welcome to Retro Saviour</h2>
-        <p>We're dedicated to bringing your retro gaming devices back to life. Whether it's a flickering Sega Game Gear screen or a silent Atari Lynx, our expert repairs restore the magic of classic gaming. Let's keep the nostalgia alive!</p>
+        <p>We're dedicated to bringing your retro gaming devices back to life. Whether it's a flickering Sega Game Gear screen or a silent Atari Lynx, our expert repairs restore the magic of classic gaming.</p>
+        
+        <div class="welcome-icons">
+          <div class="welcome-icon">
+            <span>🔧</span>
+            <p>Expert Repairs</p>
+          </div>
+          <div class="welcome-icon">
+            <span>💡</span>
+            <p>Modern Upgrades</p>
+          </div>
+          <div class="welcome-icon">
+            <span>🚀</span>
+            <p>Quick Turnaround</p>
+          </div>
+        </div>
+        
+        <div class="welcome-cta">
+          <a href="#services" class="btn btn-secondary">Explore Our Services</a>
+        </div>
     </section>
 
     <section id="services">
         <h2>Our Repair Services</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <h3>Sega Game Gear Repair</h3>
-                <p>Comprehensive repair services for your Sega Game Gear.</p>
-                <ul>
-                    <li>Capacitor Replacement: £49</li>
-                    <li>Sound Repair: £49</li>
-                    <li>Retro Six Clean Screen Mod: £74 (if in stock)</li>
-                    <li>Retro Six Mod Install Fee: £25</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Atari Lynx Repair</h3>
-                <p>Specialized services for Atari Lynx 1 and 2.</p>
-                <ul>
-                    <li>Full Recap (Lynx 1): £59</li>
-                    <li>Full Recap (Lynx 2): £59</li>
-                    <li>BennVenn Screen for Lynx 1 or 2: £80 (shipped from Australia)</li>
-                    <li>BennVenn Screen Mod Install (Lynx 1): £30</li>
-                    <li>BennVenn Screen Mod Install (Lynx 2): £10</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Other Services</h3>
-                <p>We also offer repairs for other retro consoles.</p>
-                <ul>
-                    <li>Contact us for details!</li>
-                </ul>
-            </div>
+          <div class="service-card featured">
+            <div class="service-icon">🎮</div>
+            <h3>Sega Game Gear Repair</h3>
+            <p>Comprehensive repair services for your Sega Game Gear.</p>
+            <ul>
+              <li><span>Capacitor Replacement</span><span>£49</span></li>
+              <li><span>Sound Repair</span><span>£49</span></li>
+              <li><span>Retro Six Clean Screen Mod</span><span>£74</span></li>
+            </ul>
+          </div>
+          <div class="service-card featured">
+            <div class="service-icon">🕹️</div>
+            <h3>Atari Lynx Repair</h3>
+            <p>Specialized services for Atari Lynx 1 and 2.</p>
+            <ul>
+              <li><span>Full Recap (Lynx 1)</span><span>£59</span></li>
+              <li><span>Full Recap (Lynx 2)</span><span>£59</span></li>
+              <li><span>BennVenn Screen Mod</span><span>£80+</span></li>
+            </ul>
+          </div>
+          <div class="other-services">
+            <h3>Other Retro Services</h3>
+            <p>We also offer repairs for other classic consoles. <a href="#contact">Contact us</a> for details!</p>
+          </div>
         </div>
         <p style="text-align: center; margin-top: 2rem;">Quick Turnaround: We aim to send back your repaired console as soon as possible using Royal Mail Tracked 48.</p>
     </section>
 
     <section id="process">
         <h2>Our Repair Journey</h2>
-        <div class="process-card">
+        <div class="process-container">
+          <div class="process-timeline"></div>
+          <div class="process-card">
             <span class="emoji">📩</span>
             <h3>Hit Us Up!</h3>
             <p>Contact Retro Saviour and drop us a line—start your epic quest to revive your Sega or Atari!</p>
-        </div>
-        <div class="process-card">
+          </div>
+          <div class="process-card">
             <span class="emoji">💬</span>
             <h3>Chat Like Champs!</h3>
-            <p>Discuss your service needs with us—let’s plan your console’s big comeback!</p>
-        </div>
-        <div class="process-card">
+            <p>Discuss your service needs with us—let's plan your console's big comeback!</p>
+          </div>
+          <div class="process-card">
             <span class="emoji">📦</span>
             <h3>Ship & Pay Like a Pro!</h3>
             <p>Post your device and pay for the service—your ticket to gaming glory is on its way!</p>
-        </div>
-        <div class="process-card">
+          </div>
+          <div class="process-card">
             <span class="emoji">🛠️</span>
             <h3>Repair with Retro Vibes!</h3>
-            <p>We’ll fix it with continuous communication—stay tuned for the action-packed repair updates!</p>
-        </div>
-        <div class="process-card">
+            <p>We'll fix it with continuous communication—stay tuned for the action-packed repair updates!</p>
+          </div>
+          <div class="process-card">
             <span class="emoji">🚛</span>
             <h3>Back with a Bang!</h3>
-            <p>Get your repaired device back with tracking—or a refund if we can’t save the day!</p>
-        </div>
-        <div class="process-card">
+            <p>Get your repaired device back with tracking—or a refund if we can't save the day!</p>
+          </div>
+          <div class="process-card">
             <span class="emoji">🎮</span>
             <h3>Game On, Hero!</h3>
             <p>Happy gaming—enjoy your revived classic and level up your retro adventures!</p>
+          </div>
         </div>
     </section>
 
@@ -620,30 +191,98 @@
 
     <section id="testimonials">
         <h2>What Our Customers Say</h2>
-        <div class="testimonials-carousel">
-            <div class="testimonial-card">
-                <p>"Great service, will definitely recommend."</p>
-                <p>- starlord1980 (Sega Game Gear Repair RECAP Service)</p>
+        
+        <div class="arcade-cabinet">
+            <div class="cabinet-top"></div>
+            
+            <div class="cabinet-screen">
+                <div class="screen-scanlines"></div>
+                
+                <div class="testimonials-container">
+                    <div class="testimonials-track">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="quote">"Great service, will definitely recommend."</p>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <p class="author">- starlord1980</p>
+                                <p class="service">Sega Game Gear Repair</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="quote">"Arrived safely and works great! There are a couple of scratches on the glass, which I'm not certain happened in shipment, but I'm glad it arrived in one piece."</p>
+                                <div class="testimonial-rating">
+                                    <span>★★★★☆</span>
+                                </div>
+                                <p class="author">- lamthewalrus77</p>
+                                <p class="service">Atari Lynx 1 BennVenn Screen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="quote">"Great seller. As described. Fast dispatch. Well packaged and great communication. Thanks."</p>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <p class="author">- baver3016</p>
+                                <p class="service">Atari Lynx 1 Console</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="quote">"Fantastic work! My Sega Game Gear looks and plays like new. The screen replacement is crystal clear."</p>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <p class="author">- retromaniac42</p>
+                                <p class="service">Sega Game Gear Screen Replacement</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="quote">"Quick turnaround and excellent communication throughout the repair process. My Lynx works better than it did when new!"</p>
+                                <div class="testimonial-rating">
+                                    <span>★★★★★</span>
+                                </div>
+                                <p class="author">- pixelpusher88</p>
+                                <p class="service">Atari Lynx 2 Full Restoration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-navigation">
+                    <button class="nav-btn prev-btn" aria-label="Previous testimonial">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="pagination-dots"></div>
+                    
+                    <button class="nav-btn next-btn" aria-label="Next testimonial">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="testimonial-card">
-                <p>"Arrived safely and works great! There are a couple of scratches on the glass, which I'm not certain happened in shipment, but I'm glad it arrived in one piece."</p>
-                <p>- lamthewalrus77 (Atari Lynx 1 BennVenn Screen With Game)</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"Great seller. As described. Fast dispatch. Well packaged and great communication. Thanks."</p>
-                <p>- baver3016 (Atari Lynx 1 Console Original MK1)</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"I sent a Game Gear for repair on a Monday and got it back fully working fine on the Friday, good service and nice guy kept me informed throughout, Thanks."</p>
-                <p>- wain_jame</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"Fantastic item, really happy with it. Item exactly as described, priced really well. The item was in great protective packaging and sellers comms was great throughout."</p>
-                <p>- stratmaster_85 (Retro Six Clean Screen Fully Recapped)</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"Great person to deal with, came back working. Speedy turnaround. Thank you."</p>
-                <p>- sonic5tails (Sega Game Gear Repair RECAP Service)</p>
+            
+            <div class="cabinet-controls">
+                <div class="joystick">
+                    <div class="joystick-base"></div>
+                    <div class="joystick-stick"></div>
+                </div>
+                <div class="control-buttons">
+                    <div class="control-btn"></div>
+                    <div class="control-btn"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -653,57 +292,37 @@
         <form class="contact-form" onsubmit="alert('Form submitted! We\'ll get back to you soon.'); return false;">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
-            <input type="tel" placeholder="Your Telephone">
             <textarea placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
         <div class="contact-info">
-            <p>Email: contact@retro-saviour.co.uk</p>
-            <p>Address: Cardiff, Wales</p>
-        </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📧</div>
+              <div class="contact-info-text">contact@retro-saviour.co.uk</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📍</div>
+              <div class="contact-info-text">Cardiff, Wales</div>
+            </div>
+          </div>
     </section>
 
     <footer>
         <p>© 2025 Retro Saviour. All rights reserved. Keeping retro gaming alive, one console at a time.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const processCards = document.querySelectorAll('.process-card');
-            const otherSections = document.querySelectorAll('section:not(#process)');
-            const homeLink = document.getElementById('home-link');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.2
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            processCards.forEach(card => {
-                observer.observe(card);
-            });
-
-            otherSections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // Ensure smooth scrolling to top when clicking the logo
-            homeLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- SCRIPTS -->
+    <!-- Core functionality -->
+    <script src="js/core.js"></script>
+    <!-- Navigation functionality -->
+    <script src="js/navigation.js"></script>
+    <!-- Testimonial carousel -->
+    <script src="js/testimonials.js"></script>
+    <!-- Process animation -->
+    <script src="js/process.js"></script>
+    <!-- Contact form functionality -->
+    <script src="js/contact.js"></script>
+    <!-- Main script -->
+    <script src="js/main.js"></script>
 </body>
 </html>

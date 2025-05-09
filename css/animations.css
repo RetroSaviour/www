@@ -1,0 +1,57 @@
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.5s ease forwards;
+  }
+  
+  .animate-pulse {
+    animation: pulse 1s infinite alternate;
+  }
+  
+  .animate-glitch:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both;
+  }

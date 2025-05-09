@@ -1,0 +1,103 @@
+#stats {
+    background: radial-gradient(circle at center, rgba(36, 172, 81, 0.1), transparent 70%),
+                var(--retro-dark);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #stats::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M0,0h10v10H0V0z M10,10h10v10H10V10z" fill="%23e81c28" opacity="0.05"/></svg>') repeat;
+    opacity: 0.3;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--card-padding);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    z-index: 1;
+    transform: translateY(0);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,56,100,0.1), rgba(46,226,230,0.1));
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  
+  .stat-card:hover::before {
+    opacity: 1;
+  }
+  
+  .stat-card h3 {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+    font-family: var(--pixel-font);
+  }
+  
+  .stat-card p {
+    color: var(--retro-light);
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .stat-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: var(--primary-green);
+    text-shadow: 0 0 10px rgba(36, 172, 81, 0.3);
+  }
+  
+  .stats-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .stats-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .stat-card.animate {
+    animation: floatUp 0.5s forwards;
+  }
+  
+  @keyframes floatUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
