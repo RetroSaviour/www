@@ -332,9 +332,9 @@ function renderContact(section, data) {
   // Update contact form placeholders
   const form = section.querySelector('.contact-form');
   if (form && data.formPlaceholders) {
-    const nameInput = form.querySelector('input[type="text"]');
-    const emailInput = form.querySelector('input[type="email"]');
-    const messageInput = form.querySelector('textarea');
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const messageInput = form.querySelector('textarea[name="message"]');
     const submitButton = form.querySelector('button[type="submit"]');
     
     if (nameInput) nameInput.placeholder = data.formPlaceholders.name;

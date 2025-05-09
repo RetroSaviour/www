@@ -152,6 +152,10 @@ window.siteContent = {
         "message": "Your Message",
         "submit": "Send Message"
       },
+      "successMessage": {
+        "title": "Message Sent!",
+        "text": "Thanks for reaching out! We'll get back to you as soon as possible."
+      },
       "email": "contact@retro-saviour.co.uk",
       "location": "Cardiff, Wales"
     }
