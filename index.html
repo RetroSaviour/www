@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#home" class="nav-brand">
+            <a href="#about" class="nav-brand">
                 <div class="logo-container">
                     <!-- Custom Retro Saviour Icon -->
                     <img src="images/retro-saviour-icon.svg" alt="Retro Saviour Logo" class="nav-logo">
@@ -43,13 +43,13 @@
         </div>
     </nav>
 
-    <header>
+    <header data-content-file="header">
         <h1>Restoring and Reviving Your Sega and Atari Consoles</h1>
         <p>Specializing in expert repairs to bring your classic gaming devices back to life with passion and precision.</p>
         <a href="#contact" class="hero-cta">Get Your Repair Quote</a>
     </header>
 
-    <section id="home">
+    <section id="about" data-content-file="about">
         <h2>Welcome to Retro Saviour</h2>
         <p>We're dedicated to bringing your retro gaming devices back to life. Whether it's a flickering Sega Game Gear screen or a silent Atari Lynx, our expert repairs restore the magic of classic gaming.</p>
         
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section id="services">
+    <section id="services" data-content-file="services">
         <h2>Our Repair Services</h2>
         <div class="services-grid">
           <div class="service-card featured">
@@ -104,7 +104,7 @@
         <p style="text-align: center; margin-top: 2rem;">Quick Turnaround: We aim to send back your repaired console as soon as possible using Royal Mail Tracked 48.</p>
     </section>
 
-    <section id="process">
+    <section id="process" data-content-file="process">
         <h2>Our Repair Journey</h2>
         <div class="process-container">
           <div class="process-timeline"></div>
@@ -141,7 +141,7 @@
         </div>
     </section>
 
-    <section id="stats">
+    <section id="stats" data-content-file="stats">
         <h2>Our Achievements</h2>
         <div class="stats-grid">
             <div class="stat-card">
@@ -159,7 +159,7 @@
         </div>
     </section>
 
-    <section id="gallery">
+    <section id="gallery" data-content-file="gallery">
         <h2>Our Work</h2>
         <div class="gallery-grid">
             <div class="gallery-card">
@@ -189,7 +189,7 @@
         </div>
     </section>
 
-    <section id="testimonials">
+    <section id="testimonials" data-content-file="testimonials">
         <h2>What Our Customers Say</h2>
         
         <div class="arcade-cabinet">
@@ -287,7 +287,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" data-content-file="contact">
         <h2>Contact Us</h2>
         <form class="contact-form" onsubmit="alert('Form submitted! We\'ll get back to you soon.'); return false;">
             <input type="text" placeholder="Your Name" required>
@@ -312,6 +312,9 @@
     </footer>
 
     <!-- SCRIPTS -->
+    <!-- Add this before the other scripts -->
+    <script src="js/content-loader.js"></script>
+    
     <!-- Core functionality -->
     <script src="js/core.js"></script>
     <!-- Navigation functionality -->

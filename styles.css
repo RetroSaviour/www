@@ -12,7 +12,7 @@
 
 /* Import section-specific styles */
 @import 'css/sections/hero.css';
-@import 'css/sections/home.css';
+@import 'css/sections/about.css';
 @import 'css/sections/services.css';
 @import 'css/sections/process.css';
 @import 'css/sections/stats.css'; 

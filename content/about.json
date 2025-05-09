@@ -1,0 +1,18 @@
+{
+    "title": "About Retro Saviour",
+    "subtitle": "Reviving Your Retro Gaming Classics",
+    "welcomeIcons": [
+      {
+        "icon": "💡",
+        "text": "Modern Upgrades"
+      },
+      {
+        "icon": "🚀", 
+        "text": "Quick Turnaround"
+      }
+    ],
+    "cta": {
+      "text": "Explore Our Services",
+      "link": "#services"
+    }
+  }

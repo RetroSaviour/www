@@ -1,6 +1,4 @@
 #gallery {
-    background: linear-gradient(to bottom, transparent, rgba(28, 28, 40, 0.9)),
-                url('../../images/Arcade-Pattern-Background.jpg') repeat;
     padding-top: 5rem;
   }
   

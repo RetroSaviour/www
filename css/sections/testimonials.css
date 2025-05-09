@@ -1,7 +1,5 @@
 /* Main testimonials section */
 #testimonials {
-  background: linear-gradient(135deg, rgba(28, 28, 40, 0.95), rgba(44, 44, 77, 0.9)),
-              url('../../images/Vintage-Pattern.jpg') repeat;
   padding: 3rem 1.5rem;
   position: relative;
   overflow: hidden;

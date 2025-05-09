@@ -11,6 +11,8 @@ header {
   position: relative;
   overflow: hidden;
   margin-top: 56px; /* Height of navbar */
+  --overlay-opacity: 0.7;
+  --overlay-color: rgba(28, 28, 40, 0.6);
 }
 
 /* Scanlines effect */

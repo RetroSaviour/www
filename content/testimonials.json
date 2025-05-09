@@ -1,0 +1,35 @@
+{
+    "title": "What Our Customers Say",
+    "testimonials": [
+      {
+        "quote": "Great service, will definitely recommend.",
+        "rating": 5,
+        "author": "starlord1980",
+        "service": "Sega Game Gear Repair"
+      },
+      {
+        "quote": "Arrived safely and works great! There are a couple of scratches on the glass, which I'm not certain happened in shipment, but I'm glad it arrived in one piece.",
+        "rating": 4,
+        "author": "lamthewalrus77",
+        "service": "Atari Lynx 1 BennVenn Screen"
+      },
+      {
+        "quote": "Great seller. As described. Fast dispatch. Well packaged and great communication. Thanks.",
+        "rating": 5,
+        "author": "baver3016",
+        "service": "Atari Lynx 1 Console"
+      },
+      {
+        "quote": "Fantastic work! My Sega Game Gear looks and plays like new. The screen replacement is crystal clear.",
+        "rating": 5,
+        "author": "retromaniac42",
+        "service": "Sega Game Gear Screen Replacement"
+      },
+      {
+        "quote": "Quick turnaround and excellent communication throughout the repair process. My Lynx works better than it did when new!",
+        "rating": 5,
+        "author": "pixelpusher88",
+        "service": "Atari Lynx 2 Full Restoration"
+      }
+    ]
+  }

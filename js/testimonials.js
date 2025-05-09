@@ -2,7 +2,7 @@
  * Testimonials carousel functionality
  */
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Testimonials script loaded');
+    //console.log('Testimonials script loaded');
   
     // Get all necessary elements
     const cards = document.querySelectorAll('.testimonial-card');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    console.log(`Found ${cards.length} testimonial cards`);
+    // console.log(`Found ${cards.length} testimonial cards`);
     
     // Keep track of current testimonial
     let currentIndex = 0;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
       }
       
-      console.log(`Showing testimonial ${index + 1} of ${cards.length}`);
+      // console.log(`Showing testimonial ${index + 1} of ${cards.length}`);
     }
     
     // Auto-rotate testimonials every 5 seconds

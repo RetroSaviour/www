@@ -2,7 +2,7 @@
  * Main script that initializes all functionality
  */
 RetroApp.utils.onReady(function() {
-    console.log('Retro Saviour website loaded');
+    //console.log('Retro Saviour website loaded');
     
     // Enable lazy loading for images
     if ('loading' in HTMLImageElement.prototype) {

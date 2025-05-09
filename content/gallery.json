@@ -1,0 +1,35 @@
+{
+    "title": "Our Work",
+    "items": [
+      {
+        "image": "images/Atari-Lynx-Displaying-ZARLOR.jpg",
+        "alt": "Atari Lynx Displaying ZARLOR",
+        "caption": "Atari Lynx with BennVenn Screen Mod"
+      },
+      {
+        "image": "images/Sega-Game-Gear-Displaying-Sonic-the-Hedgehog.jpg",
+        "alt": "Sega Game Gear Displaying Sonic the Hedgehog",
+        "caption": "Sega Game Gear with Retro Six Clean Screen"
+      },
+      {
+        "image": "images/Atari-Lynx-Internals.jpg",
+        "alt": "Atari Lynx Internals",
+        "caption": "Inside an Atari Lynx during repair"
+      },
+      {
+        "image": "images/Sega-Game-Gear-Internals.jpg",
+        "alt": "Sega Game Gear Internals",
+        "caption": "Inside a Sega Game Gear during repair"
+      },
+      {
+        "image": "images/Sega-Game-Gear-Back-Copper-Shielding.jpg",
+        "alt": "Sega Game Gear Back Copper Shielding",
+        "caption": "Sega Game Gear with copper shielding"
+      },
+      {
+        "image": "images/Workspace-with-Microscope-and-Monitor.jpg",
+        "alt": "Workspace with Microscope and Monitor",
+        "caption": "Our dedicated repair workspace"
+      }
+    ]
+  }
