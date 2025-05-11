@@ -108,7 +108,6 @@ contact: {
 
 Important Tips
 
-- Always make a backup of the file before editing
 - Only change the text between quotation marks
 - Don't delete commas, brackets, or other symbols
 - Keep quotation marks around text: "like this"
@@ -120,14 +119,14 @@ Adding Images
 
 To update gallery images:
 
-1. Upload your new image files to the images/gallery folder
+1. Upload your new image files to the /images folder
 2. Update the reference in site-contents.js:
 
 ```javascript
 gallery: {
   images: [
     {
-      src: "images/gallery/your-new-image.jpg",
+      src: "/images/your-new-image.jpg",
       alt: "Description of image"
     },
     // Other images...
