@@ -1,4 +1,4 @@
-# Retro Saviour Website - Content Management Guide
+n# Retro Saviour Website - Content Management Guide
 
 This guide explains how to update your website content without needing to understand HTML or JavaScript coding. By editing a single file, you can change text, prices, testimonials, and more on your site.
 
@@ -126,7 +126,7 @@ To update gallery images:
 gallery: {
   images: [
     {
-      src: "/images/your-new-image.jpg",
+      src: "images/your-new-image.jpg",
       alt: "Description of image"
     },
     // Other images...
