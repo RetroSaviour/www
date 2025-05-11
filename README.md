@@ -8,10 +8,9 @@ All content for your website is stored in one file: `site-contents.js`. Follow t
 
 ### Step 1: Access Your Website Files
 
-1. Log in to GitHub (or your hosting provider)
-2. Go to your website repository or file manager
-3. Navigate to the `content` folder
-4. Find and open the `site-contents.js` file
+1. Navigate to the `content` folder
+2. Find and open the `site-contents.js` file
+3. Click "edit" 
 
 ### Step 2: Find the Section You Want to Change
 
